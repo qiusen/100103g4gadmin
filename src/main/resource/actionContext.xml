@@ -116,4 +116,12 @@
 			</property>
 	  </bean>
 	  
+	  
+	  <!-- 滚动公告 action -->
+	  <bean id="scrollNoticeAction" class="com.dihaitech.managercenter.controller.action.scrollNotice.ScrollNoticeAction" scope="prototype">
+			<property name="scrollNoticeService">
+				<ref bean="scrollNoticeService" />
+			</property>
+	  </bean>
+	  
 </beans>

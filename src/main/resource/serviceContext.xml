@@ -42,4 +42,7 @@
 	  
 	  <!-- 部门职位 service -->	
 	  <bean id="depPosService" class="com.dihaitech.managercenter.service.impl.DepPosServiceImpl"/>
+	  
+	  <!-- 滚动公告 service -->	
+	  <bean id="scrollNoticeService" class="com.dihaitech.managercenter.service.impl.ScrollNoticeServiceImpl"/>
 </beans>

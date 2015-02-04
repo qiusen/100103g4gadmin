@@ -186,3 +186,61 @@ CREATE TABLE `DICT` (
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='字典';
 
+
+
+
+
+
+
+
+DROP TABLE IF EXISTS MEMBER CASCADE;
+CREATE TABLE `MEMBER` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '编号',
+  `NAME` varchar(255) NOT NULL COMMENT '名称',
+  `MOBILE` varchar(255) NOT NULL COMMENT '手机',
+  `SERV_CODE` varchar(255) NOT NULL COMMENT '服务中心编号',
+  `RECO_CODE` varchar(255) NOT NULL COMMENT '推荐人编号',
+  `MANAGER_CODE` varchar(255) NOT NULL COMMENT '管理人编号',
+  `AREA` varchar(10) NOT NULL COMMENT '位置：A、A区；B、B区',
+  `INDEN` varchar(255) default NULL COMMENT '身份证号',
+  `BANK` int(2) NOT NULL COMMENT '银行：1、农行；2、工行',
+  `passwd1` int(255) NOT NULL COMMENT '一级密码',
+  `passwd2` int(255) NOT NULL COMMENT '二级密码',
+  `passwd3` int(255) NOT NULL COMMENT '三级密码',
+  `MOBILE2` varchar(255) NOT NULL COMMENT '第二联系方式',
+  `QQ` varchar(255) NOT NULL COMMENT 'QQ',
+  `POST_CODE` varchar(255) NOT NULL COMMENT '邮编',
+  `ADDR` varchar(255) NOT NULL COMMENT '地址',
+  `REMARK` TEXT default NULL COMMENT '备注',
+  `TAX_COIN` int(11) default 0 COMMENT '报单币',
+  `CASH_COIN` int(11) default 0 COMMENT '现金币',
+  `SHOP_COIN` int(11) default 0 COMMENT '电商币',
+  `LEVEL` int(11) default 0 COMMENT '级别',
+  `STATUS` int(2) NOT NULL COMMENT '状态：0、未审；1、已审',
+  `CREATOR` varchar(255) NOT NULL COMMENT '创建人',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `UPDATOR` varchar(255) default NULL COMMENT '修改人',
+  `UPDATETIME` datetime default '2000-01-01 00:00:00' COMMENT '修改时间',
+  `EXATOR` varchar(255) default NULL COMMENT '审核人',
+  `EXATETIME` datetime default '2000-01-01 00:00:00' COMMENT '审核时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员';
+
+
+
+
+DROP TABLE IF EXISTS SCROLL_NOTICE CASCADE;
+CREATE TABLE `SCROLL_NOTICE` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CONTENT` TEXT default NULL COMMENT '内容',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `UPDATOR` varchar(255) default NULL COMMENT '修改人',
+  `UPDATETIME` datetime default '2000-01-01 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='滚动公告';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('滚动公告','/admin/scrollNotice','scrollNoticeAction',1,1,'2012-08-01 08:08:08');
+
+
+
