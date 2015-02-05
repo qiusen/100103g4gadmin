@@ -45,4 +45,7 @@
 	  
 	  <!-- 滚动公告 service -->	
 	  <bean id="scrollNoticeService" class="com.dihaitech.managercenter.service.impl.ScrollNoticeServiceImpl"/>
+	  
+	  <!-- 会员 service -->	
+	  <bean id="memberService" class="com.dihaitech.managercenter.service.impl.MemberServiceImpl"/>
 </beans>

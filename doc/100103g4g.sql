@@ -205,17 +205,20 @@ CREATE TABLE `MEMBER` (
   `AREA` varchar(10) NOT NULL COMMENT '位置：A、A区；B、B区',
   `INDEN` varchar(255) default NULL COMMENT '身份证号',
   `BANK` int(2) NOT NULL COMMENT '银行：1、农行；2、工行',
-  `passwd1` int(255) NOT NULL COMMENT '一级密码',
-  `passwd2` int(255) NOT NULL COMMENT '二级密码',
-  `passwd3` int(255) NOT NULL COMMENT '三级密码',
+  `BANK_ADDR`  varchar(255) default NULL COMMENT '开户地址',
+  `BANK_NAME`  varchar(255) default NULL COMMENT '开户名',
+  `BANK_ACCO`  varchar(255) default NULL COMMENT '银行账号',
+  `passwd1` varchar(255) NOT NULL COMMENT '一级密码',
+  `passwd2` varchar(255) NOT NULL COMMENT '二级密码',
+  `passwd3` varchar(255) NOT NULL COMMENT '三级密码',
   `MOBILE2` varchar(255) NOT NULL COMMENT '第二联系方式',
   `QQ` varchar(255) NOT NULL COMMENT 'QQ',
   `POST_CODE` varchar(255) NOT NULL COMMENT '邮编',
   `ADDR` varchar(255) NOT NULL COMMENT '地址',
   `REMARK` TEXT default NULL COMMENT '备注',
-  `TAX_COIN` int(11) default 0 COMMENT '报单币',
-  `CASH_COIN` int(11) default 0 COMMENT '现金币',
-  `SHOP_COIN` int(11) default 0 COMMENT '电商币',
+  `TAX_COIN` double default 0.00 COMMENT '报单币',
+  `CASH_COIN` double default 0.00 COMMENT '现金币',
+  `SHOP_COIN` double default 0.00 COMMENT '电商币',
   `LEVEL` int(11) default 0 COMMENT '级别',
   `STATUS` int(2) NOT NULL COMMENT '状态：0、未审；1、已审',
   `CREATOR` varchar(255) NOT NULL COMMENT '创建人',
@@ -227,7 +230,10 @@ CREATE TABLE `MEMBER` (
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员';
 
+insert into MEMBER(`CODE`,`NAME`,`MOBILE`,`SERV_CODE`,`RECO_CODE`,`MANAGER_CODE`,`AREA`,`INDEN`,`BANK`,`BANK_ADDR`,`BANK_NAME`,`BANK_ACCO`,`passwd1`,`passwd2`,`passwd3`,`MOBILE2`,`QQ`,`POST_CODE`,`ADDR`,`REMARK`,`TAX_COIN`,`CASH_COIN`,`SHOP_COIN`,`LEVEL`,`STATUS`,`CREATOR`,`CREATETIME`,`UPDATOR`,`UPDATETIME`,`EXATOR`,`EXATETIME`) 
+values('qiusen','邱森','13800138000','-','-','-','A','123456789123456789',1,'香港','邱森','1234567890123456','21232f297a57a5a743894a0e4a801fc3','21232f297a57a5a743894a0e4a801fc3','21232f297a57a5a743894a0e4a801fc3','13900139000','297454210','100080','北京市海淀区中关村','这个就不写了',0.00,0.00,0.00,0,1,'-','2012-08-01 08:08:08','-','2012-08-01 08:08:08','-','2012-08-01 08:08:08');
 
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('会员管理','/admin/member','memberAction',1,1,'2012-08-01 08:08:08');
 
 
 DROP TABLE IF EXISTS SCROLL_NOTICE CASCADE;

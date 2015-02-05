@@ -117,10 +117,20 @@
 	  </bean>
 	  
 	  
+	  
+	  
+	  
 	  <!-- 滚动公告 action -->
 	  <bean id="scrollNoticeAction" class="com.dihaitech.managercenter.controller.action.scrollNotice.ScrollNoticeAction" scope="prototype">
 			<property name="scrollNoticeService">
 				<ref bean="scrollNoticeService" />
+			</property>
+	  </bean>
+	  
+	  <!-- 会员 action -->
+	  <bean id="memberAction" class="com.dihaitech.managercenter.controller.action.member.MemberAction" scope="prototype">
+			<property name="memberService">
+				<ref bean="memberService" />
 			</property>
 	  </bean>
 	  
