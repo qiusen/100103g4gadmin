@@ -134,4 +134,11 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 新闻公告 action -->
+	  <bean id="noticeAction" class="com.dihaitech.managercenter.controller.action.notice.NoticeAction" scope="prototype">
+			<property name="noticeService">
+				<ref bean="noticeService" />
+			</property>
+	  </bean>
+	  
 </beans>

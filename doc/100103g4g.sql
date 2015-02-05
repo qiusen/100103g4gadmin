@@ -248,5 +248,17 @@ CREATE TABLE `SCROLL_NOTICE` (
 
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('滚动公告','/admin/scrollNotice','scrollNoticeAction',1,1,'2012-08-01 08:08:08');
 
+DROP TABLE IF EXISTS NOTICE CASCADE;
+CREATE TABLE `NOTICE` (
+  `ID` int(11) NOT NULL auto_increment,
+  `TITLE` varchar(255) NOT NULL COMMENT '标题',
+  `CONTENT` TEXT default NULL COMMENT '内容',
+  `CREATOR` varchar(255) default NULL COMMENT '创建人',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `UPDATOR` varchar(255) default NULL COMMENT '修改人',
+  `UPDATETIME` datetime default '2000-01-01 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='新闻公告';
 
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('新闻公告','/admin/notice','noticeAction',1,1,'2012-08-01 08:08:08');
 

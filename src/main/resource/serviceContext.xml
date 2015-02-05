@@ -48,4 +48,8 @@
 	  
 	  <!-- 会员 service -->	
 	  <bean id="memberService" class="com.dihaitech.managercenter.service.impl.MemberServiceImpl"/>
+	  
+	  <!-- 新闻公告 service -->	
+	  <bean id="noticeService" class="com.dihaitech.managercenter.service.impl.NoticeServiceImpl"/>
+	  
 </beans>

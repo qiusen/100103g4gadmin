@@ -398,5 +398,31 @@
     </package> 
     <!-- 会员Action End -->
     
+    <!-- 新闻公告Action Begin -->
+    <package name="struts-admin-notice" namespace="/admin/notice" extends="struts-interceptor">
+		<action name="noticeAction" class="noticeAction">
+			<result name="success" type="dispatcher">/jsp/admin/notice/noticeList.jsp</result>
+			<result name="add" type="dispatcher">/jsp/admin/notice/noticeAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">noticeAction</param>
+				<param name="namespace">/admin/notice</param>
+			</result>
+
+			<result name="edit" type="dispatcher">/jsp/admin/notice/noticeEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">noticeAction</param>
+				<param name="namespace">/admin/notice</param>
+			</result>
+			
+			<result name="deleteSuccess" type="redirectAction">
+				<param name="actionName">noticeAction</param>
+				<param name="namespace">/admin/notice</param>
+			</result>
+			
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 新闻公告Action End -->
+    
     
 </struts>
