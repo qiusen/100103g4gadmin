@@ -424,5 +424,30 @@
     </package> 
     <!-- 新闻公告Action End -->
     
+    <!-- 留言Action Begin -->
+    <package name="struts-admin-comment" namespace="/admin/comment" extends="struts-interceptor">
+		<action name="commentAction" class="commentAction">
+			<result name="success" type="dispatcher">/jsp/admin/comment/commentList.jsp</result>
+			<result name="add" type="dispatcher">/jsp/admin/comment/commentAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">commentAction</param>
+				<param name="namespace">/admin/comment</param>
+			</result>
+
+			<result name="edit" type="dispatcher">/jsp/admin/comment/commentEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">commentAction</param>
+				<param name="namespace">/admin/comment</param>
+			</result>
+			
+			<result name="deleteSuccess" type="redirectAction">
+				<param name="actionName">commentAction</param>
+				<param name="namespace">/admin/comment</param>
+			</result>
+			
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 留言Action End -->
     
 </struts>

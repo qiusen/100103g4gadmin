@@ -52,4 +52,7 @@
 	  <!-- 新闻公告 service -->	
 	  <bean id="noticeService" class="com.dihaitech.managercenter.service.impl.NoticeServiceImpl"/>
 	  
+	  <!-- 留言 service -->	
+	  <bean id="commentService" class="com.dihaitech.managercenter.service.impl.CommentServiceImpl"/>
+	  
 </beans>

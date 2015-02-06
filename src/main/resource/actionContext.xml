@@ -141,4 +141,11 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 留言 action -->
+	  <bean id="commentAction" class="com.dihaitech.managercenter.controller.action.comment.CommentAction" scope="prototype">
+			<property name="commentService">
+				<ref bean="commentService" />
+			</property>
+	  </bean>
+	  
 </beans>

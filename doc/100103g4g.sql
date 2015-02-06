@@ -262,3 +262,19 @@ CREATE TABLE `NOTICE` (
 
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('新闻公告','/admin/notice','noticeAction',1,1,'2012-08-01 08:08:08');
 
+DROP TABLE IF EXISTS COMMENT CASCADE;
+CREATE TABLE `COMMENT` (
+  `ID` int(11) NOT NULL auto_increment,
+  `TYPE` int(2) NOT NULL COMMENT '类型：1、财务咨询；2、产品咨询；3、公司建议；4、其他咨询',
+  `CONTENT` TEXT default NULL COMMENT '内容',
+  `REVET` TEXT default NULL COMMENT '回复',
+  `CREATOR` varchar(255) default NULL COMMENT '创建人',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `REVETOR` varchar(255) default NULL COMMENT '回复人',
+  `REVETTIME` datetime default '2000-01-01 00:00:00' COMMENT '回复时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='留言';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('留言管理','/admin/comment','commentAction',1,1,'2012-08-01 08:08:08');
+
+
