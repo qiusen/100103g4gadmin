@@ -8,6 +8,7 @@ import com.dihaitech.managercenter.controller.action.BaseAction;
 import com.dihaitech.managercenter.model.Manager;
 import com.dihaitech.managercenter.model.Member;
 import com.dihaitech.managercenter.service.IMemberService;
+import com.dihaitech.managercenter.util.MD5Util;
 import com.dihaitech.managercenter.util.Page;
 import com.dihaitech.managercenter.util.TypeUtil;
 import com.dihaitech.managercenter.util.json.JSONUtil;
@@ -126,11 +127,35 @@ public class MemberAction extends BaseAction {
 	 * @return
 	 */
 	public String editSave(){
+		String passwd1 = this.getRequest().getParameter("passwd1");
+		String passwd2 = this.getRequest().getParameter("passwd2");
+		String passwd3 = this.getRequest().getParameter("passwd3");
+		
+		if(passwd1!=null && passwd1.trim().length()>0){
+			member.setPasswd1(MD5Util.stringToMD5(passwd1));
+		}
+		if(passwd2!=null && passwd2.trim().length()>0){
+			member.setPasswd2(MD5Util.stringToMD5(passwd2));
+		}
+		if(passwd3!=null && passwd3.trim().length()>0){
+			member.setPasswd3(MD5Util.stringToMD5(passwd3));
+		}
+		
+		
 		Manager manager = (Manager)this.getSession().getAttribute("manager");
 		member.setUpdator(manager.getNickname());
 		member.setUpdatetime(new Date());
 		
-		memberService.editSave(member);
+		int check = TypeUtil.stringToInt(this.getRequest().getParameter("check"));
+		if(check==1){
+			member.setExator(manager.getNickname());
+			member.setExatetime(new Date());
+			memberService.editSaveAndCheck(member);
+		}else{
+			memberService.editSave(member);
+		}
+		
+		
 		return "editSave";
 	}
 	

@@ -70,4 +70,14 @@ public class MemberServiceImpl implements IMemberService {
 	public Member selectMemberById(Member member) {
 		return memberDAO.selectMemberById(member);
 	}
+
+
+	/* (non-Javadoc)
+	 * @see com.dihaitech.managercenter.service.IMemberService#editSaveAndCheck(com.dihaitech.managercenter.model.Member)
+	 */
+	@Override
+	public void editSaveAndCheck(Member member) {
+		// TODO Auto-generated method stub
+		memberDAO.editSaveAndCheck(member);
+	}
 }

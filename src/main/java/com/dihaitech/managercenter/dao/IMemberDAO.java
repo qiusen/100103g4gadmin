@@ -69,4 +69,10 @@ public interface IMemberDAO {
 	 * @return
 	 */
 	public List<Member> selectAll();
+
+	/**
+	 * 修改并审核 
+	 * @param member
+	 */
+	public void editSaveAndCheck(Member member);
 }

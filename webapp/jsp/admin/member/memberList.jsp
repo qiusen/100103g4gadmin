@@ -24,6 +24,14 @@ function f_initGrid(){
 		
 		{ display: '编号', name: 'code',type: 'text' , width: '10%'},
 		{ display: '名称', name: 'name',type: 'text' , width: '15%'},
+		{ display: '状态', name: 'status',type: 'text' , width: '5%',render: function (rowdata, rowindex, value)
+        {
+        		var h = "<font color='red'>未审</font>";
+            if(rowdata.status==1){
+                h = "<font color='green'>已审</font>";
+            }
+            return h;
+        } },
 		{ display: '手机', name: 'mobile',type: 'text' , width: '15%'},
 		{ display: '服务中心编号', name: 'servCode',type: 'text' , width: '10%'},
 		{ display: '推荐人编号', name: 'recoCode',type: 'text' , width: '10%'},
@@ -66,14 +74,7 @@ function f_initGrid(){
 		{ display: '现金币', name: 'cashCoin',type: 'text' , width: '10%'},
 		{ display: '电商币', name: 'shopCoin',type: 'text' , width: '10%'},
 		//{ display: '级别', name: 'level',type: 'text' , width: '5%'},
-		{ display: '状态', name: 'status',type: 'text' , width: '5%',render: function (rowdata, rowindex, value)
-        {
-        		var h = "<font color='red'>未审</font>";
-            if(rowdata.status==1){
-                h = "<font color='green'>已审</font>";
-            }
-            return h;
-        } },
+		
 		{ display: '创建人', name: 'creator',type: 'text' , width: '15%'},
 		{ display: '创建时间', name: 'createtime',type: 'text' , width: '15%'},
 		{ display: '修改人', name: 'updator',type: 'text' , width: '15%'},

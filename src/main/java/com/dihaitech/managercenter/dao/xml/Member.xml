@@ -225,6 +225,40 @@
         	where ID = #{id}
 	</update>
 	
+	<update id="editSaveAndCheck" parameterType="member">
+		update `member` set 
+              `CODE` = #{code}, 
+              `NAME` = #{name}, 
+              `MOBILE` = #{mobile}, 
+              `SERV_CODE` = #{servCode}, 
+              `RECO_CODE` = #{recoCode}, 
+              `MANAGER_CODE` = #{managerCode}, 
+              `AREA` = #{area}, 
+              `INDEN` = #{inden}, 
+              `BANK` = #{bank}, 
+              `BANK_ADDR` = #{bankAddr}, 
+              `BANK_NAME` = #{bankName}, 
+              `BANK_ACCO` = #{bankAcco}, 
+              `PASSWD1` = #{passwd1}, 
+              `PASSWD2` = #{passwd2}, 
+              `PASSWD3` = #{passwd3}, 
+              `MOBILE2` = #{mobile2}, 
+              `QQ` = #{qq}, 
+              `POST_CODE` = #{postCode}, 
+              `ADDR` = #{addr}, 
+              `REMARK` = #{remark}, 
+              `TAX_COIN` = #{taxCoin}, 
+              `CASH_COIN` = #{cashCoin}, 
+              `SHOP_COIN` = #{shopCoin}, 
+              `LEVEL` = #{level}, 
+              `STATUS` = #{status}, 
+              `UPDATOR` = #{updator}, 
+              `UPDATETIME` = #{updatetime},
+              `EXATOR` = #{exator}, 
+           	  `EXATETIME` = #{exatetime}
+        	where ID = #{id}
+	</update>
+	
 	<select id="selectMemberById" parameterType="member" resultMap="memberMap"  >
 		SELECT * FROM `member` where ID = #{id}
 	</select>

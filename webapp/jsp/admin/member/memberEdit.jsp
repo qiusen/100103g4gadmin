@@ -10,6 +10,11 @@ function checkForm(){
 function cancleClick(){
 	self.location='memberAction.${actionExt}';    
 }
+function saveAndCheck(){
+	document.getElementById("member.status").value=1;
+	document.getElementById("check").value=1;
+	document.getElementById("memberForm").submit();
+}
 </script>
 <style type="text/css">
     body{ font-size:12px;}
@@ -21,8 +26,14 @@ function cancleClick(){
 </head>
 <body>
 <form name="memberForm" id="memberForm" method="post" action="memberAction!editSave.${actionExt}" onsubmit="return checkForm();">
+<input type="hidden" id="member.id" name="member.id" value="${requestScope.member.id}"/>
+<input name="member.passwd1" type="hidden" id="member.passwd1" value="${requestScope.member.passwd1}"/>
+<input name="member.passwd2" type="hidden" id="member.passwd2" value="${requestScope.member.passwd2}"/>
+<input name="member.passwd3" type="hidden" id="member.passwd3" value="${requestScope.member.passwd3}"/>
+<input name="member.status" type="hidden" id="member.status" value="${requestScope.member.status}" />
+<input name="check" type="hidden" id="check" value="0" />
+
 <table cellpadding="0" cellspacing="0" class="l-table-edit" style="margin-top:50px;margin-left:50px;">
-    <input type="hidden" id="member.id" name="member.id" value="${requestScope.member.id}"/>
     <tr>
         <td align="right" class="l-table-edit-td">编号：</td>
         <td align="left" class="l-table-edit-td"><input name="member.code" type="text" id="member.code" ltype="text" value="${requestScope.member.code}" readonly="readonly"/></td>
@@ -94,17 +105,17 @@ function cancleClick(){
     </tr>
     <tr>
         <td align="right" class="l-table-edit-td">一级密码：</td>
-        <td align="left" class="l-table-edit-td"><input name="member.passwd1" type="text" id="member.passwd1" ltype="text" value="${requestScope.member.passwd1}"/></td>
+        <td align="left" class="l-table-edit-td"><input name="passwd1" type="text" id="passwd1" ltype="text" /> <font color="red">不填表示不修改</font></td>
         <td align="left"></td>
     </tr>
     <tr>
         <td align="right" class="l-table-edit-td">二级密码：</td>
-        <td align="left" class="l-table-edit-td"><input name="member.passwd2" type="text" id="member.passwd2" ltype="text" value="${requestScope.member.passwd2}"/></td>
+        <td align="left" class="l-table-edit-td"><input name="passwd2" type="text" id="passwd2" ltype="text" /> <font color="red">不填表示不修改</font></td>
         <td align="left"></td>
     </tr>
     <tr>
         <td align="right" class="l-table-edit-td">三级密码：</td>
-        <td align="left" class="l-table-edit-td"><input name="member.passwd3" type="text" id="member.passwd3" ltype="text" value="${requestScope.member.passwd3}"/></td>
+        <td align="left" class="l-table-edit-td"><input name="passwd3" type="text" id="passwd3" ltype="text" /> <font color="red">不填表示不修改</font></td>
         <td align="left"></td>
     </tr>
     <tr>
@@ -157,8 +168,8 @@ function cancleClick(){
     <tr>
         <td align="right" class="l-table-edit-td">状态：</td>
         <td align="left" class="l-table-edit-td">
-        <input name="member.status" type="radio" id="member.status" value="0" <c:if test="${requestScope.member.status==0}">checked="checked"</c:if>/>未审 
-        <input name="member.status" type="radio" id="member.status" value="1" <c:if test="${requestScope.member.status==1}">checked="checked"</c:if>/>已审
+        <c:if test="${requestScope.member.status==0}">未审</c:if>
+        <c:if test="${requestScope.member.status==1}">已审</c:if>
         </td>
         <td align="left"></td>
     </tr>
@@ -176,6 +187,7 @@ function cancleClick(){
     <tr>
     	<td align="center" colspan="3">
     	<input type="submit" value="保存" id="Button1" class="l-button l-button-submit" /> 
+    <c:if test="${requestScope.member.status==0}"><input type="button" value="保存并审核" id="Button1" class="l-button l-button-reset" onclick="javascript:saveAndCheck();"/></c:if>
 	<input type="button" value="取消" class="l-button l-button-reset" onclick="javascript:cancleClick();"/>
     	</td>
     </tr>

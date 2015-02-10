@@ -63,4 +63,10 @@ public interface IMemberService {
 	 * @return
 	 */
 	public int deleteByIds(String str);
+
+	/**
+	 * 修改并审核 
+	 * @param member
+	 */
+	public void editSaveAndCheck(Member member);
 }
