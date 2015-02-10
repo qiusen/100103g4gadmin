@@ -277,4 +277,15 @@ CREATE TABLE `COMMENT` (
 
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('留言管理','/admin/comment','commentAction',1,1,'2012-08-01 08:08:08');
 
+DROP TABLE IF EXISTS BUY_EXPLAIN CASCADE;
+CREATE TABLE `BUY_EXPLAIN` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CONTENT` TEXT default NULL COMMENT '内容',
+  `UPDATOR` varchar(255) default NULL COMMENT '修改人',
+  `UPDATETIME` datetime default '2000-01-01 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='购买说明';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('购买说明','/admin/buyExplain','buyExplainAction',1,1,'2012-08-01 08:08:08');
+
 

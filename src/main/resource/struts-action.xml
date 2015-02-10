@@ -450,4 +450,19 @@
     </package> 
     <!-- 留言Action End -->
     
+    <!-- 购买说明Action Begin -->
+    <package name="struts-admin-buyExplain" namespace="/admin/buyExplain" extends="struts-interceptor">
+		<action name="buyExplainAction" class="buyExplainAction">
+
+			<result name="success" type="dispatcher">/jsp/admin/buyExplain/buyExplainEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">buyExplainAction</param>
+				<param name="namespace">/admin/buyExplain</param>
+				<param name="edit">${edit}</param>
+			</result>
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 购买说明Action End -->
+    
 </struts>

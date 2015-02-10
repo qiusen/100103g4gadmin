@@ -55,4 +55,7 @@
 	  <!-- 留言 service -->	
 	  <bean id="commentService" class="com.dihaitech.managercenter.service.impl.CommentServiceImpl"/>
 	  
+	  <!-- 购买说明 service -->	
+	  <bean id="buyExplainService" class="com.dihaitech.managercenter.service.impl.BuyExplainServiceImpl"/>
+	  
 </beans>

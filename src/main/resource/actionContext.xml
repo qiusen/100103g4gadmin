@@ -148,4 +148,11 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 购买说明 action -->
+	  <bean id="buyExplainAction" class="com.dihaitech.managercenter.controller.action.buyExplain.BuyExplainAction" scope="prototype">
+			<property name="buyExplainService">
+				<ref bean="buyExplainService" />
+			</property>
+	  </bean>
+	  
 </beans>
