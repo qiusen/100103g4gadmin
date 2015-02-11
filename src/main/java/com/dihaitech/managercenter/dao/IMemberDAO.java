@@ -75,4 +75,18 @@ public interface IMemberDAO {
 	 * @param member
 	 */
 	public void editSaveAndCheck(Member member);
+
+	/**
+	 * 增加区域人数
+	 * @param member
+	 */
+	public void editABCount(Member member);
+
+	/**
+	 * 根据编号查询会员
+	 * @param member
+	 * @return
+	 */
+	public Member selectMemberByCode(Member member);
+	
 }

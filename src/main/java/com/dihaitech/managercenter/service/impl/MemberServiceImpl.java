@@ -80,4 +80,24 @@ public class MemberServiceImpl implements IMemberService {
 		// TODO Auto-generated method stub
 		memberDAO.editSaveAndCheck(member);
 	}
+
+
+	/* (non-Javadoc)
+	 * @see com.dihaitech.managercenter.service.IMemberService#editABCount(com.dihaitech.managercenter.model.Member)
+	 */
+	@Override
+	public void editABCount(Member member) {
+		// TODO Auto-generated method stub
+		memberDAO.editABCount(member);
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.dihaitech.managercenter.service.IMemberService#selectMemberByCode(com.dihaitech.managercenter.model.Member)
+	 */
+	@Override
+	public Member selectMemberByCode(Member member) {
+		// TODO Auto-generated method stub
+		return memberDAO.selectMemberByCode(member);
+	}
 }

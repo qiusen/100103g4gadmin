@@ -151,12 +151,43 @@ public class MemberAction extends BaseAction {
 			member.setExator(manager.getNickname());
 			member.setExatetime(new Date());
 			memberService.editSaveAndCheck(member);
+			
+			Member memberTemp = new Member();
+			memberTemp.setCode(member.getManagerCode());
+			
+			if(member.getArea().equals("A")){	//管理人A区人数 +1
+				memberTemp.setIdStr(" AC= AC +1 ");
+			}
+			if(member.getArea().equals("B")){	//管理人B区人数 +1
+				memberTemp.setIdStr(" BC= BC +1 ");
+			}
+			
+			editAllManagerABCount(memberTemp);
+			
 		}else{
 			memberService.editSave(member);
 		}
 		
 		
 		return "editSave";
+	}
+	
+	/**
+	 * 递规所有上层管理人区域人数+1
+	 * @param member
+	 */
+	private void editAllManagerABCount(Member member){
+		memberService.editABCount(member);
+		
+		Member memberVO = memberService.selectMemberByCode(member);
+		
+		member.setCode(memberVO.getManagerCode());
+		Member managerMember = memberService.selectMemberByCode(member);
+		
+		if(managerMember!=null){
+			managerMember.setIdStr(member.getIdStr());
+			editAllManagerABCount(managerMember);
+		}
 	}
 	
 	/**
