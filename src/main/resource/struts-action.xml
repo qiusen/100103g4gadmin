@@ -465,4 +465,56 @@
     </package> 
     <!-- 购买说明Action End -->
     
+    <!-- 产品Action Begin -->
+    <package name="struts-admin-product" namespace="/admin/product" extends="struts-interceptor">
+		<action name="productAction" class="productAction">
+			<result name="success" type="dispatcher">/jsp/admin/product/productList.jsp</result>
+			<result name="add" type="dispatcher">/jsp/admin/product/productAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">productAction</param>
+				<param name="namespace">/admin/product</param>
+			</result>
+
+			<result name="edit" type="dispatcher">/jsp/admin/product/productEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">productAction</param>
+				<param name="namespace">/admin/product</param>
+			</result>
+			
+			<result name="deleteSuccess" type="redirectAction">
+				<param name="actionName">productAction</param>
+				<param name="namespace">/admin/product</param>
+			</result>
+			
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 产品Action End -->
+    
+    <!-- 套餐Action Begin -->
+    <package name="struts-admin-combo" namespace="/admin/combo" extends="struts-interceptor">
+		<action name="comboAction" class="comboAction">
+			<result name="success" type="dispatcher">/jsp/admin/combo/comboList.jsp</result>
+			<result name="add" type="dispatcher">/jsp/admin/combo/comboAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">comboAction</param>
+				<param name="namespace">/admin/combo</param>
+			</result>
+
+			<result name="edit" type="dispatcher">/jsp/admin/combo/comboEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">comboAction</param>
+				<param name="namespace">/admin/combo</param>
+			</result>
+			
+			<result name="deleteSuccess" type="redirectAction">
+				<param name="actionName">comboAction</param>
+				<param name="namespace">/admin/combo</param>
+			</result>
+			
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 套餐Action End -->
+    
 </struts>

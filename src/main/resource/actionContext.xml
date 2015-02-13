@@ -155,4 +155,18 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 产品 action -->
+	  <bean id="productAction" class="com.dihaitech.managercenter.controller.action.product.ProductAction" scope="prototype">
+			<property name="productService">
+				<ref bean="productService" />
+			</property>
+	  </bean>
+	  
+	  <!-- 套餐 action -->
+	  <bean id="comboAction" class="com.dihaitech.managercenter.controller.action.combo.ComboAction" scope="prototype">
+			<property name="comboService">
+				<ref bean="comboService" />
+			</property>
+	  </bean>
+	  
 </beans>

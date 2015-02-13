@@ -150,7 +150,7 @@ function itemclick(item){
 	if(item.value=='delete'){
 		var row = manager.getSelectedRow();
         if (!row) {$.ligerDialog.warn('请选择行'); return; }
-		$.ligerDialog.confirm('确认删除模块 ' + row.content + ' 的信息？', function (yes) {
+		$.ligerDialog.confirm('确认删除？', function (yes) {
             if(yes==true){
             	window.location="${base}/admin/buyExplain/buyExplainAction!delete.${actionExt}?id=" + row.id;
             }

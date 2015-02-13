@@ -147,17 +147,17 @@ function saveAndCheck(){
     </tr>
     <tr>
         <td align="right" class="l-table-edit-td">报单币：</td>
-        <td align="left" class="l-table-edit-td"><input name="member.taxCoin" type="text" id="member.taxCoin" ltype="text" value="${requestScope.member.taxCoin}"/></td>
+        <td align="left" class="l-table-edit-td"><input name="member.taxCoin" type="text" id="member.taxCoin" ltype="text" value="${requestScope.member.taxCoin}" readonly="readonly"/></td>
         <td align="left"></td>
     </tr>
     <tr>
         <td align="right" class="l-table-edit-td">现金币：</td>
-        <td align="left" class="l-table-edit-td"><input name="member.cashCoin" type="text" id="member.cashCoin" ltype="text" value="${requestScope.member.cashCoin}"/></td>
+        <td align="left" class="l-table-edit-td"><input name="member.cashCoin" type="text" id="member.cashCoin" ltype="text" value="${requestScope.member.cashCoin}" readonly="readonly"/></td>
         <td align="left"></td>
     </tr>
     <tr>
         <td align="right" class="l-table-edit-td">电商币：</td>
-        <td align="left" class="l-table-edit-td"><input name="member.shopCoin" type="text" id="member.shopCoin" ltype="text" value="${requestScope.member.shopCoin}"/></td>
+        <td align="left" class="l-table-edit-td"><input name="member.shopCoin" type="text" id="member.shopCoin" ltype="text" value="${requestScope.member.shopCoin}" readonly="readonly"/></td>
         <td align="left"></td>
     </tr>
     <tr>

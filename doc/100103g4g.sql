@@ -291,3 +291,33 @@ CREATE TABLE `BUY_EXPLAIN` (
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('购买说明','/admin/buyExplain','buyExplainAction',1,1,'2012-08-01 08:08:08');
 
 
+DROP TABLE IF EXISTS PRODUCT CASCADE;
+CREATE TABLE `PRODUCT` (
+  `ID` int(11) NOT NULL auto_increment,
+  `NAME` varchar(255) NOT NULL COMMENT '名称',
+  `SHORT_NAME` varchar(255) NOT NULL COMMENT '短名称',
+  `CONTENT` TEXT default NULL COMMENT '内容',
+  `CREATOR` varchar(255) default NULL COMMENT '创建人',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `UPDATOR` varchar(255) default NULL COMMENT '修改人',
+  `UPDATETIME` datetime default '2000-01-01 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('产品管理','/admin/product','productAction',1,1,'2012-08-01 08:08:08');
+
+DROP TABLE IF EXISTS COMBO CASCADE;
+CREATE TABLE `COMBO` (
+  `ID` int(11) NOT NULL auto_increment,
+  `NAME` varchar(255) NOT NULL COMMENT '名称',
+  `SHORT_NAME` varchar(255) NOT NULL COMMENT '短名称',
+  `CONTENT` TEXT default NULL COMMENT '内容',
+  `CREATOR` varchar(255) default NULL COMMENT '创建人',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `UPDATOR` varchar(255) default NULL COMMENT '修改人',
+  `UPDATETIME` datetime default '2000-01-01 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='套餐';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('套餐管理','/admin/combo','comboAction',1,1,'2012-08-01 08:08:08');
+

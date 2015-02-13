@@ -58,4 +58,10 @@
 	  <!-- 购买说明 service -->	
 	  <bean id="buyExplainService" class="com.dihaitech.managercenter.service.impl.BuyExplainServiceImpl"/>
 	  
+	  <!-- 产品 service -->	
+	  <bean id="productService" class="com.dihaitech.managercenter.service.impl.ProductServiceImpl"/>
+	  
+	  <!-- 套餐 service -->	
+	  <bean id="comboService" class="com.dihaitech.managercenter.service.impl.ComboServiceImpl"/>
+	  
 </beans>
