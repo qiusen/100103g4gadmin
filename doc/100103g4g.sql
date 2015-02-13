@@ -321,3 +321,29 @@ CREATE TABLE `COMBO` (
 
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('套餐管理','/admin/combo','comboAction',1,1,'2012-08-01 08:08:08');
 
+DROP TABLE IF EXISTS ONLINE_ORDER CASCADE;
+CREATE TABLE `ONLINE_ORDER` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '订单人编号',
+  `NAME` varchar(255) NOT NULL COMMENT '收货人姓名',
+  `MOBILE` varchar(255) NOT NULL COMMENT '收货人手机',
+  `ADDR` TEXT default NULL COMMENT '收货人地址',
+  `MOBILE_MODEL` varchar(255) NOT NULL COMMENT '手机型号',
+  `MOBILE_COLOR` varchar(255) NOT NULL COMMENT '手机颜色',
+  `MOBILE_NUMBER1` varchar(255) default NULL COMMENT '手机号码1',
+  `MOBILE_NUMBER2` varchar(255) default NULL COMMENT '手机号码2',
+  `MOBILE_NUMBER3` varchar(255) default NULL COMMENT '手机号码3',
+  `MOBILE_NUMBER4` varchar(255) default NULL COMMENT '手机号码4',
+  `MOBILE_NUMBER5` varchar(255) default NULL COMMENT '手机号码5',
+  `MOBILE_NUMBER6` varchar(255) default NULL COMMENT '手机号码6',
+  `PC` varchar(255) default NULL COMMENT '电脑、上网卡',
+  `REMARK` TEXT default NULL COMMENT '备注',
+  `STATUS` int(2) NOT NULL COMMENT '状态：0、未处理；1、已处理',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '创建时间',
+  `DEALOR` varchar(255) default NULL COMMENT '处理人',
+  `DEALTIME` datetime default '2000-01-01 00:00:00' COMMENT '处理时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='在线订单';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('在线订单','/admin/onlineOrder','onlineOrderAction',1,1,'2012-08-01 08:08:08');
+

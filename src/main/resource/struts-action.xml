@@ -517,4 +517,19 @@
     </package> 
     <!-- 套餐Action End -->
     
+    <!-- 在线订单Action Begin -->
+    <package name="struts-admin-onlineOrder" namespace="/admin/onlineOrder" extends="struts-interceptor">
+		<action name="onlineOrderAction" class="onlineOrderAction">
+			<result name="success" type="dispatcher">/jsp/admin/onlineOrder/onlineOrderList.jsp</result>
+
+			<result name="edit" type="dispatcher">/jsp/admin/onlineOrder/onlineOrderEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">onlineOrderAction</param>
+				<param name="namespace">/admin/onlineOrder</param>
+			</result>
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 在线订单Action End -->
+    
 </struts>

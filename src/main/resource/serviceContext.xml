@@ -64,4 +64,7 @@
 	  <!-- 套餐 service -->	
 	  <bean id="comboService" class="com.dihaitech.managercenter.service.impl.ComboServiceImpl"/>
 	  
+	  <!-- 在线订单 service -->	
+	  <bean id="onlineOrderService" class="com.dihaitech.managercenter.service.impl.OnlineOrderServiceImpl"/>
+	  
 </beans>
