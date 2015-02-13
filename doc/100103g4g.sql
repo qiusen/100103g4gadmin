@@ -347,3 +347,17 @@ CREATE TABLE `ONLINE_ORDER` (
 
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('在线订单','/admin/onlineOrder','onlineOrderAction',1,1,'2012-08-01 08:08:08');
 
+DROP TABLE IF EXISTS DEPOSIT CASCADE;
+CREATE TABLE `DEPOSIT` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '编号',
+  `TAX_COIN` double default 0.00 COMMENT '报单币',
+  `DES` varchar(255) NOT NULL COMMENT '说明',
+  `DEALOR` varchar(255) default NULL COMMENT '处理人',
+  `DEALTIME` datetime default '2000-01-01 00:00:00' COMMENT '处理时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='充值';
+
+
+
+

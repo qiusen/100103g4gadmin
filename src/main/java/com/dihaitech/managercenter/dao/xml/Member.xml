@@ -285,6 +285,12 @@
         	where `CODE` = #{code}
 	</update>
 	
+	<update id="editCoin" parameterType="member">
+		update `member` set 
+              ${idStr}
+        	where `CODE` = #{code}
+	</update>
+	
 	<select id="selectMemberByCode" parameterType="member" resultMap="memberMap"  >
 		SELECT * FROM `member` where `CODE` = #{code}
 	</select>

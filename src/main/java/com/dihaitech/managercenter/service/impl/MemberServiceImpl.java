@@ -100,4 +100,14 @@ public class MemberServiceImpl implements IMemberService {
 		// TODO Auto-generated method stub
 		return memberDAO.selectMemberByCode(member);
 	}
+
+
+	/* (non-Javadoc)
+	 * @see com.dihaitech.managercenter.service.IMemberService#editCoin(com.dihaitech.managercenter.model.Member)
+	 */
+	@Override
+	public void editCoin(Member member) {
+		// TODO Auto-generated method stub
+		memberDAO.editCoin(member);
+	}
 }

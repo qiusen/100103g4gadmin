@@ -82,4 +82,10 @@ public interface IMemberService {
 	 * @return
 	 */
 	public Member selectMemberByCode(Member member);
+
+	/**
+	 * 修改币
+	 * @param member
+	 */
+	public void editCoin(Member member);
 }

@@ -532,4 +532,18 @@
     </package> 
     <!-- 在线订单Action End -->
     
+    <!-- 充值Action Begin -->
+    <package name="struts-admin-deposit" namespace="/admin/member" extends="struts-interceptor">
+		<action name="depositAction" class="depositAction">
+			<result name="add" type="dispatcher">/jsp/admin/deposit/depositAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">memberAction</param>
+				<param name="namespace">/admin/member</param>
+			</result>
+
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 充值Action End -->
+    
 </struts>

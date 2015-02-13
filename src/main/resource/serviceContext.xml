@@ -67,4 +67,7 @@
 	  <!-- 在线订单 service -->	
 	  <bean id="onlineOrderService" class="com.dihaitech.managercenter.service.impl.OnlineOrderServiceImpl"/>
 	  
+	  <!-- 充值 service -->	
+	  <bean id="depositService" class="com.dihaitech.managercenter.service.impl.DepositServiceImpl"/>
+	  
 </beans>
