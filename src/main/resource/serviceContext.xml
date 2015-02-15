@@ -70,4 +70,7 @@
 	  <!-- 充值 service -->	
 	  <bean id="depositService" class="com.dihaitech.managercenter.service.impl.DepositServiceImpl"/>
 	  
+	  <!-- 奖金 service -->	
+	  <bean id="bonusService" class="com.dihaitech.managercenter.service.impl.BonusServiceImpl"/>
+	  
 </beans>

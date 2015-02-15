@@ -8,7 +8,7 @@ function checkForm(){
 	return true;
 }
 function cancleClick(){
-	self.location='depositAction.${actionExt}';    
+	self.location='memberAction.${actionExt}';    
 }
 </script>
 <style type="text/css">

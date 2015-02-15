@@ -359,5 +359,33 @@ CREATE TABLE `DEPOSIT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='充值';
 
 
+DROP TABLE IF EXISTS BONUS CASCADE;
+CREATE TABLE `BONUS` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '编号',
+  `CYCLE` int(11) NOT NULL COMMENT '期数',
+  `SERV_SUBSIDY` double default 0.00 COMMENT '服务补贴',
+  `MEDIA_PUB` double default 0.00 COMMENT '媒体宣传费',
+  `EDU_TRAIN` double default 0.00 COMMENT '教育培训奖',
+  `AD_SERV` double default 0.00 COMMENT '广告服务奖',
+  `ORGA_LEAD` double default 0.00 COMMENT '组织领导奖',
+  `ALLOWANCE` double default 0.00 COMMENT '津贴分红',
+  `MAINTAIN` double default 0.00 COMMENT '维护费',
+  `HELP_EACH` double default 0.00 COMMENT '互助基金',
+  `LOVE_HEART` double default 0.00 COMMENT '爱心基金',
+  `TAX` double default 0.00 COMMENT '税金',
+  `REAL_GIVE` double default 0.00 COMMENT '实发金额',
+  `DEALOR` varchar(255) default NULL COMMENT '结算人',
+  `DEALTIME` datetime default '2000-01-01 00:00:00' COMMENT '结算时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='奖金';
+
+
+
+
+
+
+
+
 
 

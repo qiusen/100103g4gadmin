@@ -183,4 +183,11 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 奖金 action -->
+	  <bean id="bonusAction" class="com.dihaitech.managercenter.controller.action.bonus.BonusAction" scope="prototype">
+			<property name="bonusService">
+				<ref bean="bonusService" />
+			</property>
+	  </bean>
+	  
 </beans>

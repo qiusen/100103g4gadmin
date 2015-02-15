@@ -546,4 +546,18 @@
     </package> 
     <!-- 充值Action End -->
     
+    <!-- 奖金Action Begin -->
+    <package name="struts-admin-bonus" namespace="/admin/member" extends="struts-interceptor">
+		<action name="bonusAction" class="bonusAction">
+			<result name="add" type="dispatcher">/jsp/admin/bonus/bonusAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">memberAction</param>
+				<param name="namespace">/admin/member</param>
+			</result>
+
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 奖金Action End -->
+    
 </struts>
