@@ -73,4 +73,7 @@
 	  <!-- 奖金 service -->	
 	  <bean id="bonusService" class="com.dihaitech.managercenter.service.impl.BonusServiceImpl"/>
 	  
+	  <!-- 提现 service -->	
+	  <bean id="withdrawService" class="com.dihaitech.managercenter.service.impl.WithdrawServiceImpl"/>
+	  
 </beans>

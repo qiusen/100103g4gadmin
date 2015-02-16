@@ -405,6 +405,23 @@ CREATE TABLE `TRAN_TAX` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='转报单币';
 
 
+DROP TABLE IF EXISTS WITHDRAW CASCADE;
+CREATE TABLE `WITHDRAW` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '编号',
+  `HAVE_COIN` double default 0.00 COMMENT '金额',
+  `COIN` double default 0.00 COMMENT '提现金额',
+  `LEFT_COIN` double default 0.00 COMMENT '剩余金额',
+  `REMARK` TEXT default NULL COMMENT '备注',
+  `STATUS` int(2) NOT NULL COMMENT '状态：0、未处理；1、已处理',
+  `CREATETIME` datetime default '2000-01-01 00:00:00' COMMENT '申请时间',
+  `DEALOR` varchar(255) default NULL COMMENT '结算人',
+  `DEALTIME` datetime default '2000-01-01 00:00:00' COMMENT '结算时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='提现';
+
+insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('提现处理','/admin/withdraw','withdrawAction',1,1,'2012-08-01 08:08:08');
+
 
 
 

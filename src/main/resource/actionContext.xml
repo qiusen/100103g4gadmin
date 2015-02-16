@@ -190,4 +190,11 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 提现 action -->
+	  <bean id="withdrawAction" class="com.dihaitech.managercenter.controller.action.withdraw.WithdrawAction" scope="prototype">
+			<property name="withdrawService">
+				<ref bean="withdrawService" />
+			</property>
+	  </bean>
+	  
 </beans>

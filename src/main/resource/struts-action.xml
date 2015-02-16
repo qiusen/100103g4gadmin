@@ -560,4 +560,20 @@
     </package> 
     <!-- 奖金Action End -->
     
+    <!-- 提现Action Begin -->
+    <package name="struts-admin-withdraw" namespace="/admin/withdraw" extends="struts-interceptor">
+		<action name="withdrawAction" class="withdrawAction">
+			<result name="success" type="dispatcher">/jsp/admin/withdraw/withdrawList.jsp</result>
+
+			<result name="edit" type="dispatcher">/jsp/admin/withdraw/withdrawEdit.jsp</result>
+			<result name="editSave" type="redirectAction">
+				<param name="actionName">withdrawAction</param>
+				<param name="namespace">/admin/withdraw</param>
+			</result>
+			
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 提现Action End -->
+    
 </struts>
