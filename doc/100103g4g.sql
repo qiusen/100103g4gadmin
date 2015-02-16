@@ -390,6 +390,20 @@ CREATE TABLE `CASH_TAX` (
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='现金币转报单币';
 
+DROP TABLE IF EXISTS TRAN_TAX CASCADE;
+CREATE TABLE `TRAN_TAX` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '编号',
+  `TARGET_CODE` varchar(255) NOT NULL COMMENT '对方编号',
+  `HAVE_COIN` double default 0.00 COMMENT '金额',
+  `OUT_COIN` double default 0.00 COMMENT '转出金额',
+  `IN_COIN` double default 0.00 COMMENT '转入金额',
+  `LEFT_COIN` double default 0.00 COMMENT '剩余金额',
+  `REMARK` TEXT default NULL COMMENT '备注',
+  `DEALTIME` datetime default '2000-01-01 00:00:00' COMMENT '结算时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='转报单币';
+
 
 
 
