@@ -576,4 +576,19 @@
     </package> 
     <!-- 提现Action End -->
     
+    <!-- 电商币结算Action Begin -->
+    <package name="struts-admin-shopCoin" namespace="/admin/member" extends="struts-interceptor">
+		<action name="shopCoinAction" class="shopCoinAction">
+
+			<result name="add" type="dispatcher">/jsp/admin/shopCoin/shopCoinAdd.jsp</result>
+			<result name="addSave" type="redirectAction">
+				<param name="actionName">memberAction</param>
+				<param name="namespace">/admin/member</param>
+			</result>
+			
+			<interceptor-ref name="common-params"/>
+        </action>
+    </package> 
+    <!-- 电商币结算Action End -->
+    
 </struts>

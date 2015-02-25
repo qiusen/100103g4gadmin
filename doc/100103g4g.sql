@@ -423,7 +423,16 @@ CREATE TABLE `WITHDRAW` (
 insert into MODULE(`MODULENAME`,`MODULEURL`,`MODULEACT`,`CATALOG_ID`,`STATUS`,`CREATETIME`)values('提现处理','/admin/withdraw','withdrawAction',1,1,'2012-08-01 08:08:08');
 
 
-
+DROP TABLE IF EXISTS SHOP_COIN CASCADE;
+CREATE TABLE `SHOP_COIN` (
+  `ID` int(11) NOT NULL auto_increment,
+  `CODE` varchar(255) NOT NULL COMMENT '编号',
+  `NAME` varchar(255) NOT NULL COMMENT '姓名',
+  `COIN` double default 0.00 COMMENT '电商币',
+  `DEALOR` varchar(255) default NULL COMMENT '处理人',
+  `DEALTIME` datetime default '2000-01-01 00:00:00' COMMENT '处理时间',
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='电商币';
 
 
 

@@ -197,4 +197,11 @@
 			</property>
 	  </bean>
 	  
+	  <!-- 电商币结算 action -->
+	  <bean id="shopCoinAction" class="com.dihaitech.managercenter.controller.action.shopCoin.ShopCoinAction" scope="prototype">
+			<property name="shopCoinService">
+				<ref bean="shopCoinService" />
+			</property>
+	  </bean>
+	  
 </beans>

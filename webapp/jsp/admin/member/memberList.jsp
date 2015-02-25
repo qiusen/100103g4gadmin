@@ -131,7 +131,8 @@ function f_initGrid(){
         //{ text: '增加', value:'add', click: itemclick, icon: 'add', img: '${base}/ligerUI/skins/icons/add.gif' },
                            { text: '修改', value:'edit', click: itemclick, icon: 'edit', img: '${base}/ligerUI/skins/icons/edit.gif' },
                            { text: '充值', value:'deposit', click: itemclick, icon: 'deposit', img: '${base}/ligerUI/skins/icons/communication.gif' },
-                           { text: '奖金', value:'bonus', click: itemclick, icon: 'bonus', img: '${base}/ligerUI/skins/icons/plus.gif' }
+                           { text: '奖金', value:'bonus', click: itemclick, icon: 'bonus', img: '${base}/ligerUI/skins/icons/plus.gif' },
+                           { text: '电商币结算', value:'shop', click: itemclick, icon: 'shop', img: '${base}/ligerUI/skins/icons/back.gif' }
                            //{ text: '删除', value:'delete', click: itemclick, icon: 'delete', img: '${base}/ligerUI/skins/icons/delete.gif' }
                             ] }
 
@@ -229,6 +230,13 @@ function itemclick(item){
         if (!row) { $.ligerDialog.warn('请选择行'); return; }
             //alert(row.id);
 		window.location="${base}/admin/member/bonusAction!add.${actionExt}?code=" + row.code;
+	}
+	
+	if(item.value=='shop'){
+        var row = manager.getSelectedRow();
+        if (!row) { $.ligerDialog.warn('请选择行'); return; }
+            //alert(row.id);
+		window.location="${base}/admin/member/shopCoinAction!add.${actionExt}?code=" + row.code;
 	}
     
 }
