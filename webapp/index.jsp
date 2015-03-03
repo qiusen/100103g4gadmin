@@ -40,18 +40,18 @@ function onsubmit(){
                 <div class="line1 MT30">
                     <i class=""></i>
                     <div class="">邮箱</div>
-                    <span class=""><input type="text" name="email" id="email" value="qiu_sen@126.com"/></span>
+                    <span class=""><input type="text" name="email" id="email" value=""/></span>
                 </div>
                 <div class="line1 MT10 mod">
                     <i class=""></i>
                     <div class="">密码</div>
-                    <span class=""><input type="password" id="password" name="password" value="admin"/></span>
+                    <span class=""><input type="password" id="password" name="password" value=""/></span>
                 </div>
 
                 <div class="line1 MT10 mod">
                     <i class="myhide"></i>
                     <div class="">验证码</div>
-                    <b class="lala"><input type="text" value="1111" id='checkCode' name='checkCode' maxlength="4" /></b>
+                    <b class="lala"><input type="text" value="" id='checkCode' name='checkCode' maxlength="4" /></b>
                     <a href="#" onclick="changeCheckCode()"><img alt="点击刷新" src="${base }/getcheckimage" id="checkCodeImg" border="0" style="vertical-align: middle;margin-left:5px;"/></a>
                 </div>
                 <div class="line1 MT10 mod" style="text-align: center;">
