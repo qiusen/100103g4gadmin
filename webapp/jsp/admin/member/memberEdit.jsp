@@ -84,6 +84,9 @@ function saveAndCheck(){
         <option value="0">未选择</option>
         <option value="1" <c:if test="${requestScope.member.bank==1}">selected="selected"</c:if>>农行</option>
         <option value="2" <c:if test="${requestScope.member.bank==2}">selected="selected"</c:if>>工行</option>
+        <option value="3" <c:if test="${requestScope.member.bank==3}">selected="selected"</c:if>>建行</option>
+        <option value="4" <c:if test="${requestScope.member.bank==4}">selected="selected"</c:if>>中行</option>
+        <option value="5" <c:if test="${requestScope.member.bank==5}">selected="selected"</c:if>>招行</option>
         </select>
         </td>
         <td align="left"></td>

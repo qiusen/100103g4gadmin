@@ -57,6 +57,15 @@ function f_initGrid(){
             if(rowdata.bank==2){
                 h = "工行";
             }
+            if(rowdata.bank==3){
+                h = "建行";
+            }
+            if(rowdata.bank==4){
+                h = "中行";
+            }
+            if(rowdata.bank==5){
+                h = "招行";
+            }
             return h;
         } },
 		{ display: '开户地址', name: 'bankAddr',type: 'text' , width: '10%'},
