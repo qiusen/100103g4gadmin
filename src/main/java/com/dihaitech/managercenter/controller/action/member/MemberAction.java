@@ -146,6 +146,11 @@ public class MemberAction extends BaseAction {
 		member.setUpdator(manager.getNickname());
 		member.setUpdatetime(new Date());
 		
+		//防止进入死循环
+		if(member.getCode().equalsIgnoreCase(member.getManagerCode())){
+			member.setManagerCode("-");
+		}
+		
 		int check = TypeUtil.stringToInt(this.getRequest().getParameter("check"));
 		if(check==1){
 			member.setExator(manager.getNickname());
@@ -177,6 +182,9 @@ public class MemberAction extends BaseAction {
 	 * @param member
 	 */
 	private void editAllManagerABCount(Member member){
+		
+		
+		
 		memberService.editABCount(member);
 		
 		Member memberVO = memberService.selectMemberByCode(member);
@@ -186,6 +194,13 @@ public class MemberAction extends BaseAction {
 		
 		if(managerMember!=null){
 			managerMember.setIdStr(member.getIdStr());
+			if(memberVO.getArea().equals("A")){	//管理人A区人数 +1
+				managerMember.setIdStr(" AC= AC +1 ");
+			}
+			if(memberVO.getArea().equals("B")){	//管理人B区人数 +1
+				managerMember.setIdStr(" BC= BC +1 ");
+			}
+			
 			editAllManagerABCount(managerMember);
 		}
 	}
