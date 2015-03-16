@@ -67,8 +67,8 @@ function saveAndCheck(){
     <tr>
         <td align="right" class="l-table-edit-td">位置：</td>
         <td align="left" class="l-table-edit-td">
-        <input name="member.area" type="radio" id="member.area" value="A" <c:if test="${requestScope.member.area=='A'}">checked="checked"</c:if>/>A区 
-        <input name="member.area" type="radio" id="member.area" value="B" <c:if test="${requestScope.member.area=='B'}">checked="checked"</c:if>/>B区
+        <c:if test="${requestScope.member.area=='A'}"><input name="member.area" type="hidden" id="member.area" value="A" />A区</c:if>
+        <c:if test="${requestScope.member.area=='B'}"><input name="member.area" type="hidden" id="member.area" value="B" />B区</c:if>
         </td>
         <td align="left"></td>
     </tr>

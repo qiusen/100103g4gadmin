@@ -213,6 +213,7 @@ public class MemberAction extends BaseAction {
 		String id = this.getRequest().getParameter("id");
 		StringBuffer strbuf = new StringBuffer(" where id =");
 		strbuf.append(id);
+		strbuf.append(" and status=0");	//只删未审会员
 		memberService.deleteByIds(strbuf.toString());
 		return "deleteSuccess";
 	}

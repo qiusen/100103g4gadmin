@@ -141,8 +141,8 @@ function f_initGrid(){
                            { text: '修改', value:'edit', click: itemclick, icon: 'edit', img: '${base}/ligerUI/skins/icons/edit.gif' },
                            { text: '充值', value:'deposit', click: itemclick, icon: 'deposit', img: '${base}/ligerUI/skins/icons/communication.gif' },
                            { text: '奖金', value:'bonus', click: itemclick, icon: 'bonus', img: '${base}/ligerUI/skins/icons/plus.gif' },
-                           { text: '电商币结算', value:'shop', click: itemclick, icon: 'shop', img: '${base}/ligerUI/skins/icons/back.gif' }
-                           //{ text: '删除', value:'delete', click: itemclick, icon: 'delete', img: '${base}/ligerUI/skins/icons/delete.gif' }
+                           { text: '电商币结算', value:'shop', click: itemclick, icon: 'shop', img: '${base}/ligerUI/skins/icons/back.gif' },
+                           { text: '删除', value:'delete', click: itemclick, icon: 'delete', img: '${base}/ligerUI/skins/icons/delete.gif' }
                             ] }
 
         
@@ -220,6 +220,9 @@ function itemclick(item){
 	if(item.value=='delete'){
 		var row = manager.getSelectedRow();
         if (!row) {$.ligerDialog.warn('请选择行'); return; }
+        if (row.status==1) {
+        		$.ligerDialog.warn('已审会员不能删除！！'); return; 
+        	}
 		$.ligerDialog.confirm('确认删除模块 ' + row.code + ' 的信息？', function (yes) {
             if(yes==true){
             	window.location="${base}/admin/member/memberAction!delete.${actionExt}?id=" + row.id;
