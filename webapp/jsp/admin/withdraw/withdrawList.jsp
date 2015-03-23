@@ -85,8 +85,8 @@ function f_initGrid(){
         //isScroll: false, 
         
         toolbar: { items: [//{ text: '增加', value:'add', click: itemclick, icon: 'add', img: '${base}/ligerUI/skins/icons/add.gif' },
-                           { text: '处理', value:'edit', click: itemclick, icon: 'edit', img: '${base}/ligerUI/skins/icons/edit.gif' }//,
-                           //{ text: '删除', value:'delete', click: itemclick, icon: 'delete', img: '${base}/ligerUI/skins/icons/delete.gif' } 
+                           { text: '处理', value:'edit', click: itemclick, icon: 'edit', img: '${base}/ligerUI/skins/icons/edit.gif' },
+                           { text: '删除', value:'delete', click: itemclick, icon: 'delete', img: '${base}/ligerUI/skins/icons/delete.gif' } 
                            ] }
 
         
@@ -164,6 +164,9 @@ function itemclick(item){
 	if(item.value=='delete'){
 		var row = manager.getSelectedRow();
         if (!row) {$.ligerDialog.warn('请选择行'); return; }
+        if (row.status==1) {
+        		$.ligerDialog.warn('已处理提现不能删除！！'); return; 
+        	}
 		$.ligerDialog.confirm('确认删除模块 ' + row.code + ' 的信息？', function (yes) {
             if(yes==true){
             	window.location="${base}/admin/withdraw/withdrawAction!delete.${actionExt}?id=" + row.id;

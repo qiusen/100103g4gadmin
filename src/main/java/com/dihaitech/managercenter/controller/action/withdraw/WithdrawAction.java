@@ -127,17 +127,65 @@ public class WithdrawAction extends BaseAction {
 		withdraw.setDealor(manager.getNickname());
 		withdraw.setStatus(1);
 		withdraw.setDealtime(new Date());
-		withdrawService.editSave(withdraw);
-		
+
 		//扣除用户现金
 		Member member = new Member();
 		member.setCode(withdraw.getCode());
-		member.setIdStr(" CASH_COIN = CASH_COIN -" + withdraw.getCoin());
+		Member memberVO = memberService.selectMemberByCode(member);
+		if(memberVO.getCashCoin()>=withdraw.getCoin()){
+			withdrawService.editSave(withdraw);
+			
+			member.setIdStr(" CASH_COIN = CASH_COIN -" + withdraw.getCoin());
+			memberService.editCoin(member);
+			return "editSave";
+		}else{
+			try {
+				this.getResponse().setCharacterEncoding("UTF-8");
+				this.getResponse().getOutputStream().print("<script>alert('money is not enough'); history.back();</script>");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return null;
+		}
 		
-		memberService.editCoin(member);
 		
-		return "editSave";
+		
 	}
 	
+	/**
+	 * 删除 提现
+	 * @return
+	 */
+	public String delete(){
+		String id = this.getRequest().getParameter("id");
+		StringBuffer strbuf = new StringBuffer(" where id =");
+		strbuf.append(id);
+		strbuf.append(" and status = 0 ");
+		withdrawService.deleteByIds(strbuf.toString());
+		return "deleteSuccess";
+	}
+
+	/**
+	 * 删除 提现
+	 * @return
+	 */
+	public String deleteByIds(){
+		String[] ids = this.getRequest().getParameterValues("id");
+		StringBuffer strbuf = new StringBuffer(" where id in(");
+		if (ids != null && ids.length > 0) {
+			for (int i = 0; i < ids.length; i++) {
+				if (i != 0) {
+					strbuf.append("," + ids[i]);
+				} else {
+					strbuf.append(ids[i]);
+				}
+			}
+			strbuf.append(")");
+			withdrawService.deleteByIds(strbuf.toString());
+			return "deleteSuccess";
+		}
+		return "deleteFailure";
+	}
 
 }

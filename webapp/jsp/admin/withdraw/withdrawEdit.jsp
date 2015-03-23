@@ -63,7 +63,7 @@ function cancleClick(){
     </tr>
     <tr>
     	<td align="center" colspan="3">
-    	<input type="submit" value="付款处理" id="Button1" class="l-button l-button-submit" /> 
+    <c:if test="${requestScope.withdraw.status==0}">	<input type="submit" value="付款处理" id="Button1" class="l-button l-button-submit" /></c:if>
 	<input type="button" value="取消" class="l-button l-button-reset" onclick="javascript:cancleClick();"/>
     	</td>
     </tr>
