@@ -79,9 +79,18 @@ function f_initGrid(){
 		{ display: '邮编', name: 'postCode',type: 'text' , width: '5%'},
 		{ display: '地址', name: 'addr',type: 'text' , width: '15%'},
 		//{ display: '备注', name: 'remark',type: 'text' , width: '15%'},
-		{ display: '报单币', name: 'taxCoin',type: 'text' , width: '10%'},
-		{ display: '现金币', name: 'cashCoin',type: 'text' , width: '10%'},
-		{ display: '电商币', name: 'shopCoin',type: 'text' , width: '10%'},
+		{ display: '报单币', name: 'taxCoin',type: 'text' , width: '10%',render: function (rowdata, rowindex, value)
+        {
+            return rowdata.taxCoin.toFixed(2);
+        } },
+		{ display: '现金币', name: 'cashCoin',type: 'text' , width: '10%',render: function (rowdata, rowindex, value)
+        {
+            return rowdata.cashCoin.toFixed(2);
+        } },
+		{ display: '电商币', name: 'shopCoin',type: 'text' , width: '10%',render: function (rowdata, rowindex, value)
+        {
+            return rowdata.shopCoin.toFixed(2);
+        } },
 		//{ display: '级别', name: 'level',type: 'text' , width: '5%'},
 		
 		{ display: '创建人', name: 'creator',type: 'text' , width: '15%'},
